@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Squirrel recognizer</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='forest.jpeg') }}");
+        }
+    </style>
+  </head>
+  <body>
+    <main id="content" role="main">
+      <div class="panel">
+        <h2 class="panel-head">Squirrel recognizer</h2>
+        <div class="panel-content">
+          <label for="image">
+            <form method="POST" action="{{ url_for('result') }}" class="image-select" data-droppable="" enctype="multipart/form-data">
+              <input id="image" name="img-file" type="file" data-droppable-input=""/>
+              <i class="fa fa-camera fa-2x image-select__icon"></i>
+              <div class="image-select__message"></div>
+              <div class="bg-image aspect-square" data-droppable-image=""></div>
+          </label>
+        </div>
+        <button type="submit">Recognize</button>
+    </form>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

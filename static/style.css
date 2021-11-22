@@ -1,0 +1,161 @@
+@charset "UTF-8";
+.bg-image {
+  background-position: top center;
+  background-size: cover;
+}
+button
+{
+  background-color: #008000;
+  color: #32CD32;
+  font-family: "Comic Sans MS";
+  font-variant: small-caps;
+  font-size: 40px;
+  margin: 10px;
+  padding: 0 1em 0.2em;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  text-shadow: 3px 4px 5px;
+  text-align: center;
+  border-radius: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bg-image.aspect-square:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  border-radius: 25px;
+}
+
+[data-droppable] * {
+  pointer-events: none;
+}
+
+.panel {
+  background: transparent;
+  color: #454547;
+  margin: 0px auto;
+  min-width: 250px;
+  width: 33.333%;
+  border-radius: 25px;
+}
+
+.panel-head {
+  background-color: #008000;
+  color: #32CD32;
+  font-family: "Comic Sans MS";
+  font-variant: small-caps;
+  font-size: 40px;
+  margin: 50px 0px 0px 0px;
+  padding: 0 1em 0.2em;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  text-shadow: 3px 4px 5px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.panel-content {
+  padding: 2em 1em;
+}
+
+.image-select {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-style: dashed;
+  border-color: #008000;
+  border-width: 5px;
+}
+
+.image-select input[type="file"] {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  cursor: pointer;
+  display: block;
+  opacity: 0;
+  z-index: 15;
+}
+
+.image-select__message:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #008000;
+  bottom: 0;
+  color: #fff;
+  content: "Browse for file...";
+  display: block;
+  font-weight: bold;
+  height: 3em;
+  line-height: 3em;
+  opacity: 0;
+  padding: 0 1em;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(100%);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.image-select:hover .image-select__message:after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-select__icon {
+  bottom: .25em;
+  color: #fff;
+  position: absolute;
+  right: .5em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.image-select:hover .image-select__icon {
+  transform: scale(0.8, 0.8);
+}
+
+.file-hover {
+  position: relative;
+}
+
+.file-hover:before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  display: block;
+  z-index: 30;
+}
+
+.file-hover:after {
+  font-family: FontAwesome;
+  animation: 1.5s bounce infinite;
+  color: #fff;
+  content: "";
+  font-size: 5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.5em 0 0 -0.5em;
+  z-index: 35;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

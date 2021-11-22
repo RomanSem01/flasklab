@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Squirrel recognizer</title>
+    <style>
+        body {
+            min-height: 100vh;   
+            display: flex;
+            justify-content: center;  
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-image: url("{{ url_for('static', filename='forest.jpeg') }}");
+        }
+        .center {  
+            padding: 2em;
+            max-width: 50%;
+        }
+        h1 { 
+            color: #ffffff; 
+            font-family: 'Raleway',sans-serif; 
+            font-size: 62px; font-weight: 800; 
+            line-height: 72px; 
+            margin: 0 0 24px; 
+            text-align: center;
+            text-transform: uppercase; 
+        }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+        <h1>{{ result }}</h1>
+    </div>
+  </body>
+</html>
